@@ -1,0 +1,12 @@
+<h1 class="page-header">Delete Contact</h1>
+
+<a href="/contacts/<%= @contact.id %>">Go back</a>
+
+<div class="well">
+  <p class="lead">Is this what you really want to do?</p>
+
+  <form action="/delete/<%= @contact.id%>" method="post">
+    <input type="hidden" name="_method" value="delete"/>
+    <button type="submit" class="btn btn-danger">Delete Contact</button>
+  </form>
+</div>

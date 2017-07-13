@@ -1,0 +1,28 @@
+
+  <h1 class="page-header">Contact Details</h1>
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <% if @contact.company == "" %>
+        <%= @contact.firstname %> <%= @contact.lastname %>
+      <% else %>
+        <%= @contact.company %>
+      <% end %>
+      <small>
+        <span class="<%= 'glyphicon glyphicon-star text-danger' if @note.important %>"></span>
+      </small>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <% if @contact.company != "" %>
+    <p>Company Contact: <%= @contact.firstname %> <%= @contact.lastname %></p>
+    <% end %>
+    <p>Address: <%= @contact.straddress %>, <%= @ontact.city %>, <%= @contact.stateprov %>, <%= @contact.country %></p>
+    <p>Phone: <%= @contact.phone %></p>
+    <p>Email: <%= @contact.email %></p>
+    <br />
+    <p>Notes: <%= @contact.notes %></p>
+
+  </div>
+  <br />
+  <a href="/edit/<%= @contact.id %>" class="btn btn-primary">Edit Note</a>
+  <a href="/delete/<%= @contact.id %>" class="btn btn-danger">Delete Note</a>

@@ -1,0 +1,82 @@
+<form action="/" method="POST">
+  <div class="form-group">
+    <label for="company">Company Name <em>(optional)</em></label>
+    <input class="form-control" type="text" id="company" name="company" />
+  </div>
+
+  <div class="form-group">
+    <label for="firstname">First Name</label>
+    <input class="form-control" type="text" id="firstname" name="firstname" />
+  </div>
+
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input class="form-control" type="text" id="lastname" name="lastname" />
+  </div>
+
+  <div class="form-group">
+    <label for="straddress">Street Address</label>
+    <input class="form-control" type="text" id="straddress" name="straddress" />
+  </div>
+
+  <div class="form-group">
+    <label for="City">City</label>
+    <input class="form-control" type="text" id="city" name="city" />
+  </div>
+
+  <div class="form-group">
+    <label for="stateprov">State / Province</label>
+    <input class="form-control" type="text" id="stateprov" name="stateprov" />
+  </div>
+
+  <div class="form-group">
+    <label for="country">Country
+      <select name="country" id="country">
+        <option value="Canada">Canada</option>
+        <option value="US">United States</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input class="form-control" type="text" id="phone" name="phone" />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input class="form-control" type="text" id="email" name="email" />
+  </div>
+
+  <div class="form-group">
+    <label for="notes">Notes</label>
+    <textarea class="form-control" name="notes" rows="5" id="notes"></textarea>
+  </div>
+
+  <div class="checkbox">
+    <label for="favorite">
+      <input type="checkbox" id="favorite" name="favorite" value="true" />Favorite?
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add Contact</button>
+</form>
+
+<h2>Contact List</h2>
+<ul class="list-unstyled list-group">
+  <% @contacts.each do |contact| %>
+    <li class="list-group-item">
+      <h4 class="list-group-item-heading">
+        <% if contact.company == "" %>
+        <a href="contacts/<%= contact.id %>"><%= contact.firstname %> <%= contact.lastname %></a>
+        <% else %>
+        <a href="contacts/<%= contact.id %>"><%= contact.company %></a>
+        <% end %>
+        <small>
+          <span class="<%= 'glyphicon glyphicon-star text-warning' if note.favorite %>"></span>
+        </small>
+      </h4>
+
+    </li>
+  <% end %>
+</ul>
