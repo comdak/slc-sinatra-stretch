@@ -1,4 +1,4 @@
-
+<a href="/">Go Back</a>
   <h1 class="page-header">Contact Details</h1>
   <div class="panel-heading">
     <h3 class="panel-title">
@@ -8,7 +8,7 @@
         <%= @contact.company %>
       <% end %>
       <small>
-        <span class="<%= 'glyphicon glyphicon-star text-danger' if @note.important %>"></span>
+        <span class="<%= "glyphicon glyphicon-star text-danger" if @contact.favorite %>"></span>
       </small>
     </h3>
   </div>
@@ -16,7 +16,7 @@
     <% if @contact.company != "" %>
     <p>Company Contact: <%= @contact.firstname %> <%= @contact.lastname %></p>
     <% end %>
-    <p>Address: <%= @contact.straddress %>, <%= @ontact.city %>, <%= @contact.stateprov %>, <%= @contact.country %></p>
+    <p>Address: <%= @contact.straddress %>, <%= @contact.city %>, <%= @contact.stateprov %></p>
     <p>Phone: <%= @contact.phone %></p>
     <p>Email: <%= @contact.email %></p>
     <br />

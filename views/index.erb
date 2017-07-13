@@ -30,15 +30,6 @@
   </div>
 
   <div class="form-group">
-    <label for="country">Country
-      <select name="country" id="country">
-        <option value="Canada">Canada</option>
-        <option value="US">United States</option>
-      </select>
-    </label>
-  </div>
-
-  <div class="form-group">
     <label for="phone">Phone Number</label>
     <input class="form-control" type="text" id="phone" name="phone" />
   </div>
@@ -73,7 +64,7 @@
         <a href="contacts/<%= contact.id %>"><%= contact.company %></a>
         <% end %>
         <small>
-          <span class="<%= 'glyphicon glyphicon-star text-warning' if note.favorite %>"></span>
+          <span class="<%= 'glyphicon glyphicon-star text-warning' if contact.favorite %>"></span>
         </small>
       </h4>
 

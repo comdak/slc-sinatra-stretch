@@ -48,7 +48,7 @@ end
 
 get '/edit/:id' do
   @title = "Edit"
-  @note = Contact[params[:id]]
+  @contact = Contact[params[:id]]
 
   if @contact.nil?
     @content = "Avast, ye scalleywag! Ye cannot edit that which can not be found"
